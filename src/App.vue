@@ -74,7 +74,7 @@ export default {
   select:-webkit-autofill:hover,
   select:-webkit-autofill:focus {
     -webkit-text-fill-color: black;
-    -webkit-box-shadow: 0 0 0px 1000px #9e9e9e inset !important;
+    -webkit-box-shadow: 0 0 0px 1000px #ffa000 inset !important;
     transition: background-color 5000s ease-in-out 0s;
   }
 }
