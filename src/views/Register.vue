@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="col s12 m8 offset-m2">
-      <div class="login card-panel grey highten-2 white-text center">
+      <div class="register card-panel amber darken-2 white-text center">
         <h3>Register</h3>
         <form>
           <div class="input-field">
@@ -14,7 +14,11 @@
             <input type="password" id="password" v-model="password" required />
             <label for="password" class="label-input">Password</label>
           </div>
-          <button class="btn" @click="register">Register</button>
+          <button class="btn btn-register" @click="register">Register</button>
+          <router-link to="/login">
+            <button class="btn btn-login">Login</button>
+          </router-link>
+
         </form>
       </div>
     </div>
@@ -23,6 +27,7 @@
 
 <script>
 import firebase from "firebase";
+import db from "../data/FireInit.js";
 export default {
   name: "register",
   data: function() {
@@ -40,6 +45,15 @@ export default {
           user => {
             alert(`Account create for ${user.user.email}`);
             this.$router.push("/");
+            db.collection("users").add({
+              name: this.email,
+              email: this.email,
+              job: "xxx",
+              DoB: "",
+              level: 0,
+              xp: 0,
+              rank: "Meteorite"
+            });
           },
           err => {
             alert(err.message);

@@ -5,7 +5,6 @@
         <div class="card-panel orange accent-2 center">
           <ul v-if="current">
             <li class="chip">{{ current.name }}</li>
-            <li>{{ current.DoB.toDate() }}</li>
             <li>{{ current.job }}</li>
             <li>{{ current.rank }}</li>
             <li>{{ current.level }}</li>

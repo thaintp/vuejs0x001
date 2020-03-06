@@ -14,18 +14,15 @@
             <input type="password" id="password" v-model="password" required />
             <label class="label-input" for="password">Password</label>
           </div>
-          <button @click="login" class="btn">Login</button>
+          <router-link to="/register">
+          <button class="btn btn-register">Register</button>
+          </router-link>
+          <button @click="login" class="btn btn-login">Login</button>
         </form>
       </div>
     </div>
   </div>
 </template>
-
-<style lang="scss">
-.label-input {
-  color: #ccc !important;
-}
-</style>
 
 <script>
 import firebase from "firebase";
