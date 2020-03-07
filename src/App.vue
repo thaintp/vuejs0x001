@@ -31,26 +31,32 @@ export default {
     color: #ccc;
   }
 }
-.link:hover {
-}
-.btn-login {
-  margin-left: 80px;
+.btn-active {
+  margin-right: 80px;
   background: #4db6ac !important;
   border-radius: 160px !important;
   width: 160px !important;
 }
-.btn-register {
-  margin-right: 80px;
+.btn-inactive {
+  margin-left: 80px;
   background: #9e9e9e !important;
   border-radius: 160px !important;
   width: 160px !important;
 }
+.btn-register-cont {
+  background: #9e9e9e !important;
+  border-radius: 240px !important;
+  width: 240px !important;
+}
 .label-input {
   color: #ccc !important;
 }
+.prefix {
+  padding-right: 10px;
+}
 .login {
   input:-webkit-autofill,
-  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
   textarea:-webkit-autofill,
   textarea:-webkit-autofill:hover,
@@ -65,7 +71,7 @@ export default {
 }
 .register {
   input:-webkit-autofill,
-  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
   textarea:-webkit-autofill,
   textarea:-webkit-autofill:hover,
@@ -76,6 +82,12 @@ export default {
     -webkit-text-fill-color: black;
     -webkit-box-shadow: 0 0 0px 1000px #ffa000 inset !important;
     transition: background-color 5000s ease-in-out 0s;
+  }
+}
+.center-table {
+  th {
+    padding-left: 50px;
+    width: 200px;
   }
 }
 </style>

@@ -3,7 +3,7 @@
     <div class="col s12 m8 offset-m2">
       <div class="login card-panel deep-orange accent-2 white-text center">
         <h3>Login</h3>
-        <form>
+        <form @submit.prevent="login">
           <div class="input-field">
             <i class="fa fa-envelope prefix"></i>
             <input type="text" id="email" v-model="email" required />
@@ -14,10 +14,10 @@
             <input type="password" id="password" v-model="password" required />
             <label class="label-input" for="password">Password</label>
           </div>
+          <button type="submit" class="btn btn-active">Login</button>
           <router-link to="/register">
-          <button class="btn btn-register">Register</button>
+            <button class="btn btn-inactive">Register</button>
           </router-link>
-          <button @click="login" class="btn btn-login">Login</button>
         </form>
       </div>
     </div>

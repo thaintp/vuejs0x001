@@ -3,7 +3,7 @@
     <div class="col s12 m8 offset-m2">
       <div class="register card-panel amber darken-2 white-text center">
         <h3>Register</h3>
-        <form>
+        <form @submit.prevent="register">
           <div class="input-field">
             <i class="fa fa-envelope prefix"></i>
             <input type="text" id="email" v-model="email" required />
@@ -14,11 +14,10 @@
             <input type="password" id="password" v-model="password" required />
             <label for="password" class="label-input">Password</label>
           </div>
-          <button class="btn btn-register" @click="register">Register</button>
+          <button type="submit" class="btn btn-active">Register</button>
           <router-link to="/login">
-            <button class="btn btn-login">Login</button>
+            <button class="btn btn-inactive">Login</button>
           </router-link>
-
         </form>
       </div>
     </div>
@@ -27,7 +26,6 @@
 
 <script>
 import firebase from "firebase";
-import db from "../data/FireInit.js";
 export default {
   name: "register",
   data: function() {
@@ -43,17 +41,8 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(
           user => {
-            alert(`Account create for ${user.user.email}`);
-            this.$router.push("/");
-            db.collection("users").add({
-              name: this.email,
-              email: this.email,
-              job: "xxx",
-              DoB: "",
-              level: 0,
-              xp: 0,
-              rank: "Meteorite"
-            });
+            alert(`Account create for ${user.user.email}. Enter the profile!`);
+            this.$router.push("/register-cont");
           },
           err => {
             alert(err.message);

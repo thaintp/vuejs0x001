@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import MyProfile from "../views/MyProfile.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
+import RegisterCont from "../views/RegisterCont.vue";
 import firebase from "firebase";
 
 Vue.use(VueRouter);
@@ -39,6 +40,14 @@ const routes = [
     component: Register,
     meta: {
       requiresGuest: true
+    }
+  },
+  {
+    path: "/register-cont",
+    name: "RegisterCont",
+    component: RegisterCont,
+    meta: {
+      requiresAuth: true
     }
   }
 ];
