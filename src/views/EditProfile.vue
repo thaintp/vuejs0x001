@@ -34,16 +34,27 @@ export default {
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
-          this.user = doc.data();
-          var entries = Object.entries(doc.data());
-          for (var [property, value] of entries) {
-            if (property == this.property) {
-              this.value = value;
-              break;
-            }
-          }
+          this.user = doc;
+          Object.entries(doc.data())
+            .forEach(([property, value]) => {
+              if (property == this.property) {
+                this.value = value;
+              }
+            });
         });
       });
+  },
+  methods: {
+    edit() {
+      var tmp = this.user.data();
+      tmp[this.property] = this.value;
+      this.user.ref.update({
+        name: tmp["name"],
+        job: tmp["job"]
+      });
+      alert(`Edit ${this.property} successfully!`);
+      this.$router.push("/my-profile");
+    }
   }
 };
 </script>
