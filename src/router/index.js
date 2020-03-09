@@ -5,6 +5,7 @@ import MyProfile from "../views/MyProfile.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import RegisterCont from "../views/RegisterCont.vue";
+import EditProfile from "../views/EditProfile.vue";
 import firebase from "firebase";
 
 Vue.use(VueRouter);
@@ -22,6 +23,14 @@ const routes = [
     path: "/my-profile",
     name: "MyProfile",
     component: MyProfile,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/edit-profile/:property",
+    name: "EditProfile",
+    component: EditProfile,
     meta: {
       requiresAuth: true
     }
