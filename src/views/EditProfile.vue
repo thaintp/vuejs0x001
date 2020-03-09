@@ -35,17 +35,16 @@ export default {
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
           this.user = doc;
-          Object.entries(doc.data())
-            .forEach(([property, value]) => {
-              if (property == this.property) {
-                this.value = value;
-              }
-            });
+          Object.entries(doc.data()).forEach(([property, value]) => {
+            if (property == this.property) {
+              this.value = value;
+            }
+          });
         });
       });
   },
   methods: {
-    edit() {
+    edit: function() {
       var tmp = this.user.data();
       tmp[this.property] = this.value;
       this.user.ref.update({

@@ -35,7 +35,7 @@ export default {
     };
   },
   methods: {
-    register: function(event) {
+    register: function() {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
@@ -48,7 +48,6 @@ export default {
             alert(err.message);
           }
         );
-      event.preventDefault();
     }
   }
 };

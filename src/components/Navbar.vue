@@ -22,12 +22,12 @@
 import firebase from "firebase";
 export default {
   name: "navbar",
-  data() {
+  data: function() {
     return {
       isLoggedIn: false
     };
   },
-  created() {
+  created: function() {
     if (firebase.auth().currentUser) {
       this.isLoggedIn = true;
     }

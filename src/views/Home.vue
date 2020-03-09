@@ -29,13 +29,13 @@
 import db from "../data/FireInit.js";
 export default {
   name: "Home",
-  data() {
+  data: function() {
     return {
       users: [],
       loading: true
     };
   },
-  created() {
+  created: function() {
     db.collection("users")
       .orderBy("level")
       .get()

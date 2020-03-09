@@ -10,12 +10,12 @@
           </div>
           <div class="input-field">
             <i class="fas fa-signature prefix"></i>
-            <input type="text" id="name" v-model="name" required />
+            <input type="text" id="name" v-model.trim="name" required />
             <label for="name" class="label-input">Name</label>
           </div>
           <div class="input-field">
             <i class="fas fa-id-badge prefix"></i>
-            <input type="text" id="job" v-model="job" required />
+            <input type="text" id="job" v-model.trim="job" required />
             <label for="job" class="label-input">Job</label>
           </div>
           <div class="input-field">
@@ -56,7 +56,7 @@ export default {
     this.email = firebase.auth().currentUser.email;
   },
   methods: {
-    registerCont: function(event) {
+    registerCont: function() {
       db.collection("users")
         .add({
           email: this.email,
@@ -67,13 +67,12 @@ export default {
           xp: this.xp
         })
         .then(() => {
-          alert(`User for ${this.email} is added`);
+          alert(`Profile for ${this.email} is added`);
           this.$router.push("/");
         })
         .catch(err => {
           alert(err);
         });
-      event.preventDefault();
     }
   }
 };

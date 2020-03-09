@@ -28,14 +28,14 @@
 import firebase from "firebase";
 export default {
   name: "login",
-  data() {
+  data: function() {
     return {
       email: "",
       password: ""
     };
   },
   methods: {
-    login(e) {
+    login: function() {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
@@ -48,7 +48,6 @@ export default {
             alert(err.message);
           }
         );
-      e.preventDefault();
     }
   }
 };
