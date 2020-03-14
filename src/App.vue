@@ -43,8 +43,8 @@ export default {
   border-radius: 160px !important;
   width: 160px !important;
 }
-.btn-register-cont {
-  background: #9e9e9e !important;
+.btn-active-single {
+  background: #4db6ac !important;
   border-radius: 240px !important;
   width: 240px !important;
 }

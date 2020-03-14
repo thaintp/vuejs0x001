@@ -30,7 +30,7 @@
             <i class="fas fa-battery-half prefix"></i>
             <input type="text" id="xp" v-model="xp" disabled />
           </div>
-          <button type="submit" class="btn btn-register-cont">Register</button>
+          <button type="submit" class="btn btn-active-single">Register</button>
         </form>
       </div>
     </div>
