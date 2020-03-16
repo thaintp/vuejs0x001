@@ -1,10 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-import MyProfile from "../views/MyProfile.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import RegisterCont from "../views/RegisterCont.vue";
+import MyProfile from "../views/MyProfile.vue";
 import EditProfile from "../views/EditProfile.vue";
 import firebase from "firebase";
 
@@ -14,7 +13,9 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: function() {
+      return import("../views/Home.vue");
+    },
     meta: {
       requiresAuth: true
     }

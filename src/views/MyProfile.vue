@@ -106,7 +106,7 @@ export default {
         var currentRankIndex = this.ranks.indexOf(this.user.rank);
         if (this.user.level >= this.xpUp[currentRankIndex]) {
           this.user.rank = this.ranks[currentRankIndex + 1];
-          alert(`Coungratulation! Rank up to ${this.user.rank}`);
+          alert(`Congratulation! Rank up to ${this.user.rank}`);
         }
         this.user.xp = 0;
       }
