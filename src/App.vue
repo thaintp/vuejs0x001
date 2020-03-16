@@ -7,6 +7,8 @@
   </div>
 </template>
 
+<style lang="scss" src="./assets/scss/style.scss"></style>
+
 <script>
 import navbar from "./components/Navbar";
 export default {
@@ -16,78 +18,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-.link {
-  margin-right: 20px;
-  &:hover {
-    color: #ccc;
-  }
-}
-.btn-active {
-  margin-right: 80px;
-  background: #4db6ac !important;
-  border-radius: 160px !important;
-  width: 160px !important;
-}
-.btn-inactive {
-  margin-left: 80px;
-  background: #9e9e9e !important;
-  border-radius: 160px !important;
-  width: 160px !important;
-}
-.btn-active-single {
-  background: #4db6ac !important;
-  border-radius: 240px !important;
-  width: 240px !important;
-}
-.label-input {
-  color: #ccc !important;
-}
-.prefix {
-  padding-right: 10px;
-}
-.login {
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  textarea:-webkit-autofill,
-  textarea:-webkit-autofill:hover,
-  textarea:-webkit-autofill:focus,
-  select:-webkit-autofill,
-  select:-webkit-autofill:hover,
-  select:-webkit-autofill:focus {
-    -webkit-text-fill-color: black;
-    -webkit-box-shadow: 0 0 0px 1000px #ff6e40 inset !important;
-    transition: background-color 5000s ease-in-out 0s;
-  }
-}
-.register {
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  textarea:-webkit-autofill,
-  textarea:-webkit-autofill:hover,
-  textarea:-webkit-autofill:focus,
-  select:-webkit-autofill,
-  select:-webkit-autofill:hover,
-  select:-webkit-autofill:focus {
-    -webkit-text-fill-color: black;
-    -webkit-box-shadow: 0 0 0px 1000px #ffa000 inset !important;
-    transition: background-color 5000s ease-in-out 0s;
-  }
-}
-.center-table {
-  th {
-    padding-left: 50px;
-    width: 200px;
-  }
-}
-</style>

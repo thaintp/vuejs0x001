@@ -44,11 +44,7 @@
               </tr>
             </table>
 
-            <button
-              @click="up"
-              class="btn-floating btn-large pulse"
-              style="background-color: #FF00FF; margin-top: 20px;"
-            >
+            <button @click="up" class="btn-floating btn-large btn-up pulse">
               <i class="fas fa-arrow-up"></i>
             </button>
           </div>
@@ -67,7 +63,7 @@ export default {
   data: function() {
     return {
       user: null,
-      ref: null,
+      doc: null,
       xpUp: [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60],
       ranks: [
         "",
@@ -94,7 +90,7 @@ export default {
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
           this.user = doc.data();
-          this.ref = doc.ref;
+          this.doc = doc;
         });
       });
   },
@@ -110,16 +106,29 @@ export default {
         }
         this.user.xp = 0;
       }
+    },
+    isUp: function() {
+      var upXp = this.user.xp !== this.doc.data().xp;
+      if (upXp) {
+        return true;
+      }
+      var upLevel = this.user.level !== this.doc.data().level;
+      if (upLevel) {
+        return true;
+      }
+      return false;
     }
   },
   beforeDestroy: function() {
-    var save = confirm("Save your training?");
-    if (save) {
-      this.ref.update({
-        rank: this.user.rank,
-        level: this.user.level,
-        xp: this.user.xp
-      });
+    if (this.isUp()) {
+      var save = confirm("Save your training?");
+      if (save) {
+        this.doc.ref.update({
+          rank: this.user.rank,
+          level: this.user.level,
+          xp: this.user.xp
+        });
+      }
     }
   }
 };
